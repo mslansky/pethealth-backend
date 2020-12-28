@@ -13,7 +13,9 @@ diaryRouter
       .catch((error) => {
         res.json(error);
       });
-  })
+  });
+
+diaryRouter
   .route('/:diaryid')
   .get((req, res, next) => {
     diaryService.getOneDiary(req.app.get('db'))
@@ -38,7 +40,9 @@ diaryRouter
       .catch((error) => {
         res.json(error);
       });
-  })
+  });
+
+diaryRouter
   .route('/pet/:petname')
   .get((req, res, next) => {
     diaryService.getAllDiaries(req.app.get('db'), req.param.petname)
