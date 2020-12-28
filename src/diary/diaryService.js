@@ -32,8 +32,8 @@ const diaryService = {
       .del();
   },
 
-  getAllDiaries (knex, petid) {
-    return knex('diaries').where({petid: petid});
+  getAllDiaries (knex, name) {
+    return knex('diaries').where({name: name});
   },
 
 
