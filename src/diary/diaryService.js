@@ -26,9 +26,9 @@ const diaryService = {
   },
 
 
-  deleteDiary (knex, diaryid) {
+  deleteDiary (knex, id) {
     return knex
-      .where({ id: diaryid })
+      .where({ id: id})
       .del();
   },
 
