@@ -1,3 +1,3 @@
-insert into profile (name)
+insert into profiles (name)
 values
-  ('Oliver Example')
+  ('Oliver')
