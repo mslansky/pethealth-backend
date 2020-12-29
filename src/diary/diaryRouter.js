@@ -33,7 +33,7 @@ diaryRouter
       });
   })
   .delete((req, res, next) => {
-    diaryService.deleteDiary(req.app.get('db'), req.param.diaryid)
+    diaryService.deleteDiary(req.app.get('db'), req.params.diaryid)
       .then((diary) =>{
         res.json(diary);
       })
@@ -45,7 +45,7 @@ diaryRouter
 diaryRouter
   .route('/pet/:petname')
   .get((req, res, next) => {
-    diaryService.getAllDiaries(req.app.get('db'), req.param.petname)
+    diaryService.getAllDiaries(req.app.get('db'), req.params.petname)
       .then((diaries) => {
         res.json(diaries);
       });
