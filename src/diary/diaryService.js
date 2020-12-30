@@ -27,7 +27,7 @@ const diaryService = {
 
 
   deleteDiary (knex, id) {
-    return knex
+    return knex('diaries')
       .where({ id: id})
       .del();
   },

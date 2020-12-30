@@ -16,7 +16,7 @@ const profileService = {
   },
 
   deleteProfile(knex, id) {
-    return knex
+    return knex('profiles')
       .where({ id: id})
       .del();
   },
