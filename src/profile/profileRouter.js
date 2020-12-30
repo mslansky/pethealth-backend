@@ -22,17 +22,18 @@ profileRouter
       .catch((error) => {
         res.json(error);
       });
-      
+  });
+
 profileRouter
-      .route('/:profilesid')
-      .delete((req, res, next) => {
-        profileService.deleteProfile(req.app.get('db'), req.params.profilesid)
-          .then((profile) =>{
-            res.json(profile);
-          })
-          .catch((error) => {
-            res.json(error);
-          });
+  .route('/:profilesid')
+  .delete((req, res, next) => {
+    profileService.deleteProfile(req.app.get('db'), req.params.profilesid)
+      .then((profile) =>{
+        res.json(profile);
+      })
+      .catch((error) => {
+        res.json(error);
+      });
   });
  
 
