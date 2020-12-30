@@ -12,8 +12,8 @@ const diaryService = {
       });
   },
 
-  getOneDiary (knex, diaryid){
-    return knex('diaries').where({id: diaryid});
+  getOneDiary (knex, id){
+    return knex('diaries').where({id: id});
   },
 
   updateDiary (knex, diary){

@@ -13,7 +13,14 @@ const profileService = {
       .then(rows => {
         return rows[0];
       });
-  }
+  },
+
+  deleteProfile(knex, id) {
+    return knex
+      .where({ id: id})
+      .del();
+  },
+
 };
 
 module.exports = profileService;
