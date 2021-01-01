@@ -1,10 +1,22 @@
 'use strict';
 
+function clean(obj) {
+  //exclude all empty attributes
+  for (var propName in obj) {
+    if (obj[propName] === null || obj[propName] === undefined) {
+      delete obj[propName];
+    }
+  }
+  return obj;
+}
+
 const diaryService = {
 
   insertDiary(knex, newDiary) {
+    const insertDiary = clean(newDiary); 
+
     return knex
-      .insert(newDiary)
+      .insert(insertDiary)
       .into('diaries')
       .returning('*')
       .then(rows => {
