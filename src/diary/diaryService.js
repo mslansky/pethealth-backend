@@ -13,6 +13,7 @@ function clean(obj) {
 const diaryService = {
 
   insertDiary(knex, newDiary) {
+    console.log(newDiary);
     const insertDiary = clean(newDiary); 
 
     return knex
