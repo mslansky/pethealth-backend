@@ -18,7 +18,7 @@ diaryRouter
 diaryRouter
   .route('/:diaryid')
   .get((req, res, next) => {
-    diaryService.getOneDiary(req.app.get('db'))
+    diaryService.getOneDiary(req.app.get('db'), req.params.diaryid)
       .then((diaries) => {
         res.json(diaries);
       });
