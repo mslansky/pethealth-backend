@@ -10,8 +10,21 @@ const errorHandler = require('./error-handler');
 const profileRouter = require('./profile/profileRouter');
 const diaryRouter = require('./diary/diaryRouter');
 const bodyParser = express.json();
+const { DATABASE_URL } = require('./config');
+const knex = require('knex');
+
 
 const app = express();
+
+
+const knexInstance = knex({
+  client: 'pg',
+  connection: DATABASE_URL,
+});
+
+
+app.set('db', knexInstance);
+console.log(DATABASE_URL);
 
 app.use(morgan((NODE_ENV === 'production') ? 'tiny' : 'common', {
   skip: () => NODE_ENV === 'test'

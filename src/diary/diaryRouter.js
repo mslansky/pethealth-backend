@@ -47,6 +47,7 @@ diaryRouter
   .get((req, res, next) => {
     diaryService.getAllDiaries(req.app.get('db'), req.params.petname)
       .then((diaries) => {
+        console.log(diaries);
         res.json(diaries);
       });
   });
