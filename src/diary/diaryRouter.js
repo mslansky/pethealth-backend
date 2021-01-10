@@ -45,6 +45,7 @@ diaryRouter
 diaryRouter
   .route('/pet/:petname')
   .get((req, res, next) => {
+    console.log(req.params.petname);
     diaryService.getAllDiaries(req.app.get('db'), req.params.petname)
       .then((diaries) => {
         console.log(diaries);

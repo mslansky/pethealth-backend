@@ -1,22 +1,22 @@
 'use strict';
 const { expect } = require('chai');
-const supertest = require('supertest');
 const app = require('../src/app');
+const supertest = require('supertest');
 const { API_TOKEN } = require('../src/config');
 
 describe('Express App', () => {
-  it('should return a message from GET /', () => {
+  it('GET / responds with 200 containing "Hello, world!"', () => {
     return supertest(app)
-      .get('/api/diaries/pet/Bento')
+      .get('/')
       .set({ 'Authorization': `Bearer ${API_TOKEN}` })
-      .expect(200);
+      .expect(200, 'Hello, world!');
   });
 });
 
 describe('Unauthorized Access', () => {
   it('should return a 401 Error from any endpoint', () => {
     return supertest(app)
-      .get('/api/diaries/pet/Bento')
+      .get('/')
       .expect(401);
   });
 });

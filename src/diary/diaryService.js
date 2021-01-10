@@ -46,6 +46,7 @@ const diaryService = {
   },
 
   getAllDiaries (knex, name) {
+    console.log(name);
     return knex('diaries').where({name: name});
   },
 
