@@ -7,10 +7,16 @@ This was my first capstone project for the THINKFUL engineering immersion bootca
 
 Link to Live Application: pet-health-app.mslansky.vercel.app
 
-## Application
-GET // POST // AND DELETE Requests can be viewed via POSTMAN
+## Application 
+Endpoints:  
 
-Authorization TOKEN is required 
+/api/profiles/:profilesid - This endpoint allows for POSTING a pet profile | also allows for DELETE
+
+/api/diaries/:diaryid - This endpoint allows for CREATING one specific diary entry, UPDATING one diary, and DELETING diary
+
+/api/diaries/pet/:petname - This endpoint allows for GETTING ALL diaries for one specific pet to generate a report
+
+* Authorization TOKEN is required 
 
 Testing is implemented for all endpoints
 
