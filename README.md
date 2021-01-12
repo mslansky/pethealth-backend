@@ -10,7 +10,9 @@ Link to Live Application: pet-health-app.mslansky.vercel.app
 ## Application 
 Endpoints:  
 
-/api/profiles/:profilesid - This endpoint allows for POSTING a pet profile | also allows for DELETE
+/api/profiles/ - This main route endpoint GETS all profiles and POSTS a new profile CREATED
+
+/api/profiles/:profilesid - This endpoint DELETES one specific pet profile
 
 /api/diaries/:diaryid - This endpoint allows for CREATING one specific diary entry, UPDATING one diary, and DELETING diary
 
